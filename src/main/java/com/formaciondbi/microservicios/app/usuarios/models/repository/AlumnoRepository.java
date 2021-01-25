@@ -1,8 +1,8 @@
 package com.formaciondbi.microservicios.app.usuarios.models.repository;
 
 import java.util.List;
-
 import org.springframework.data.jpa.repository.Query;
+
 
 import com.formaciondbi.microservicios.generics.models.entity.Alumno;
 import com.formaciondbi.microservicios.generics.repository.Repository;
