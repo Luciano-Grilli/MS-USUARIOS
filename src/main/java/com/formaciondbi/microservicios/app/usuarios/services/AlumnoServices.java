@@ -1,18 +1,11 @@
 package com.formaciondbi.microservicios.app.usuarios.services;
 
+import java.util.List;
 
+import com.formaciondbi.microservicios.generics.models.entity.Alumno;
+import com.formaciondbi.microservicios.generics.services.Services;
 
-import com.formaciondbi.microservicios.app.usuarios.models.entity.Alumno;
-
-public interface AlumnoServices {
+public interface AlumnoServices extends Services<Alumno, Long>{
 	
-	public Iterable<Alumno>findAll() throws Exception;
-	
-	public Alumno findById(Long id) throws Exception;
-	
-	public Alumno update(Long id, Alumno alumno)throws Exception;
-	
-	public Alumno save(Alumno alumno) throws Exception;
-	
-	public boolean deleteById(Long id) throws Exception;
+	public List<Alumno> finByNombreOrApellido(String term);
 }

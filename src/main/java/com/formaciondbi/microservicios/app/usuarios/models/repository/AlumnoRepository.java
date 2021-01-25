@@ -1,9 +1,16 @@
 package com.formaciondbi.microservicios.app.usuarios.models.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
-import com.formaciondbi.microservicios.app.usuarios.models.entity.Alumno;
+import org.springframework.data.jpa.repository.Query;
 
-public interface AlumnoRepository extends CrudRepository<Alumno, Long> {
+import com.formaciondbi.microservicios.generics.models.entity.Alumno;
+import com.formaciondbi.microservicios.generics.repository.Repository;
+
+public interface AlumnoRepository extends Repository<Alumno, Long> {
+	
+	@Query("select a from Alumno a where a.nombre like %?1% or a.apellido like %?1%")
+	public List<Alumno> finByNombreOrApellido(String term);
+
 
 }
