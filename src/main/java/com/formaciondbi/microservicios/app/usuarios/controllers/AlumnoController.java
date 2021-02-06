@@ -1,6 +1,7 @@
 package com.formaciondbi.microservicios.app.usuarios.controllers;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -37,6 +38,11 @@ public class AlumnoController extends ControllerImpl<Alumno, ServicesImpl<Alumno
 		return ResponseEntity.ok(alumnoServices.finByNombreOrApellido(term));
 	}
 
+	@GetMapping("alumnos-por-curso")
+	public ResponseEntity<?> obtenerAlumnosPorCurso(@RequestParam List<Long> ids){
+		return ResponseEntity.ok(alumnoServices.findAllById(ids));
+	}
+	
 	public ResponseEntity<?> save(Alumno entity) {
 		// TODO Auto-generated method stub
 		return null;
