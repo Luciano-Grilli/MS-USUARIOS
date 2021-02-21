@@ -76,9 +76,10 @@ public class AlumnoController extends ControllerImpl<Alumno, ServicesImpl<Alumno
 		dbAlumno.setEmail(alumno.getEmail());
 		
 		if (!archivo.isEmpty()) {
-			alumno.setFoto(archivo.getBytes());
+			dbAlumno.setFoto(archivo.getBytes());
 		}
 		return ResponseEntity.status(HttpStatus.CREATED).body(alumnoServices.save(dbAlumno));
+			
 	}
 	
 	@GetMapping("/uploads/img/{id}")
@@ -91,6 +92,7 @@ public class AlumnoController extends ControllerImpl<Alumno, ServicesImpl<Alumno
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"imagen null.\"}");
 		        
 			}
+			
 			
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"error por favor intente mas tarde.\"}");
