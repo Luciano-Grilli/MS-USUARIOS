@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.formaciondbi.microservicios.app.usuarios.client.CursoFeignClient;
-import com.formaciondbi.microservicios.app.usuarios.models.repository.AlumnoRepository;
+import com.formaciondbi.microservicios.app.usuarios.repository.AlumnoRepository;
 import com.formaciondbi.microservicios.generics.models.entity.Alumno;
 import com.formaciondbi.microservicios.generics.services.ServicesImpl;
 

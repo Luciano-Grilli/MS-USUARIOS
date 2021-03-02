@@ -1,4 +1,4 @@
-package com.formaciondbi.microservicios.app.usuarios.models.repository;
+package com.formaciondbi.microservicios.app.usuarios.repository;
 
 import java.util.List;
 
