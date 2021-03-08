@@ -41,10 +41,7 @@ public class AlumnoController extends ControllerImpl<Alumno, ServicesImpl<Alumno
 		return ResponseEntity.ok(alumnoServices.findAllById(ids));
 	}
 	
-	public ResponseEntity<?> save(Alumno entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@PostMapping("/crear-con-foto")
 	public ResponseEntity<?> saveConFoto(@Valid Alumno alumno, BindingResult result, @RequestParam MultipartFile archivo) throws IOException {
@@ -102,13 +99,6 @@ public class AlumnoController extends ControllerImpl<Alumno, ServicesImpl<Alumno
 		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen);
 	}
 
-	@Override
-	public ResponseEntity<?> update(Long id, Alumno entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 	
 	
 }
